@@ -65,12 +65,12 @@ $(LIBRARY):	$(SUBS)
 		$(AR) crv temp.$@ $(SUBS)
 		mv temp.$@ $@
 
-update:		$(MAIN:%=$(DEST)/%)
+install:	$(MAIN:main_%.o=$(DEST)/%)
 
-$(MAIN:%=$(DEST)/%): $(HDRS) $(SRCS)
-		$(MAKE) $(MFLAGS) install
-
-install:;	sudo rm -f $(LIST:%=$(DEST)/%)
-		sudo install -v -m 0755 $(LIST) $(DEST)
+update:		$(MAIN:main_%.o=$(DEST)/%)
 
 $(SRCS:%.c=%.o): $(HDRS)
+
+$(DEST)/%:	%
+		sudo rm -f $@
+		sudo install -v -s -m 0755 $(<F) $(@D)
