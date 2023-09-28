@@ -1,5 +1,7 @@
+#include <ctype.h>
 #include <limits.h>
 #include <stdio.h>
+#include <string.h>
 #include <sys/stat.h>
 #include <time.h>
 #include <unistd.h>
@@ -100,7 +102,7 @@ int main (int argc, char *const *argv)
 	time_t tm;
 	struct tm *tms;
 	char (*work)[PATH_MAX];
-	char filler[16];
+	char filler[48];
 
    /*
     * Initializations.
