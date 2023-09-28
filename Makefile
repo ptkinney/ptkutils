@@ -2,7 +2,7 @@
 # Independent settings #
 ########################
 
-DEST	      = /tmp
+DEST	      = /usr/local/bin
 
 CFLAGS	      = -DPROFILE -O3 -march=native -pedantic -std=gnu11 -Wall -pg
 CFLAGS	      = -DDEBUG -g -fomit-frame-pointer -march=native -pedantic -std=gnu11 -Wall
