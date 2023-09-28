@@ -143,8 +143,8 @@ int main (int argc, char *const *argv)
     * Initialize input buffer and input buffer index.
     */
 	i = 0;
-	if ((nread = read (STDIN_FILENO, memset (in, 0, sizeof (in)), sizeof (in))) <= 0)
-		die (__FILE__, __LINE__, NULL);
+	if ((nread = read (STDIN_FILENO, memset (in, 0, sizeof (in)), sizeof (in))) < 0)
+		die (__FILE__, __LINE__, "nread = %ld", (long) nread);
    /*
     * Cycle through input.
     */
@@ -180,7 +180,8 @@ int main (int argc, char *const *argv)
 		++i;
 		if (i >= nread) {
 			i = 0;
-			nread = read (STDIN_FILENO, memset (in, 0, sizeof (in)), sizeof (in));
+			if ((nread = read (STDIN_FILENO, memset (in, 0, sizeof (in)), sizeof (in))) < 0)
+				die (__FILE__, __LINE__, "nread = %ld", (long) nread);
 		}
 	}
    /*
