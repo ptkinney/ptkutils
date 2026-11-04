@@ -2,15 +2,9 @@
 # Independent settings #
 ########################
 
-DEST	      = /usr/local/bin
+CFLAGS	      ?= -O3 -fomit-frame-pointer -march=native -pedantic -std=gnu11 -Wall
 
-CFLAGS	      = -DPROFILE -O3 -march=native -pedantic -std=gnu11 -Wall -pg
-CFLAGS	      = -DDEBUG -g -fomit-frame-pointer -march=native -pedantic -std=gnu11 -Wall
-CFLAGS	      = -O3 -fomit-frame-pointer -march=native -pedantic -std=gnu11 -Wall
-
-LDFLAGS	      = -pg
-LDFLAGS	      = -g
-LDFLAGS	      =
+LDFLAGS	      ?=
 
 ######################
 # Dependent settings #
@@ -65,12 +59,4 @@ $(LIBRARY):	$(SUBS)
 		$(AR) crv temp.$@ $(SUBS)
 		mv temp.$@ $@
 
-install:	$(MAIN:main_%.o=$(DEST)/%)
-
-update:		$(MAIN:main_%.o=$(DEST)/%)
-
 $(SRCS:%.c=%.o): $(HDRS)
-
-$(DEST)/%:	%
-		sudo rm -f $@
-		sudo install -v -s -m 0755 $(<F) $(@D)
