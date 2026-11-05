@@ -123,7 +123,7 @@ int main (int argc, char *const *argv)
 	while ((c = getopt (argc, argv, "hv")) != EOF)
 		switch (c) {
 		case 'h':
-			hflag = 0;
+			hflag = 1;
 			break;
 		case 'v':
 			++vflag;
