@@ -1,0 +1,35 @@
+.TH STAMP 1ptk "November 2026" "1.0" "User Commands"
+.SH NAME
+detab \- convert tabs to spaces and remove whitespace at the end of lines.
+.SH SYNOPSIS
+.B /usr/bin/detab
+[
+.I -dhjtv
+] [
+.BI -m " c"
+] [
+.BI -n " #"
+]
+.I pattern ...
+.SH DESCRIPTION
+.B detab
+processes from standard input to standard output
+converting tabs to spaces and removing whitespace
+at the end of lines.
+.SH OPTIONS
+.TP
+.B \-h
+Show the help message and exit.
+.TP
+.B \-v
+Increase verbosity.
+.SH EXAMPLES
+.EX
+.B detab < file0 > file1
+.EE
+Convert tabs and remove trailing whitespace from
+.B file0 ,
+saving resulting text into
+.B file1 .
+.SH AUTHORS
+Paul Kinney.

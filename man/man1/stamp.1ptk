@@ -1,0 +1,46 @@
+.TH STAMP 1ptk "November 2026" "1.0" "User Commands"
+.SH NAME
+stamp \- apply configurable timestamps to patterns
+.SH SYNOPSIS
+.B /usr/local/bin/stamp
+[
+.I -dhjtv
+] [
+.BI -m " c"
+] [
+.BI -n " #"
+]
+.I pattern ...
+.SH DESCRIPTION
+.B stamp
+processes the provided
+.I pattern
+arguments and applies timestamps based on the specified options. 
+.SH OPTIONS
+.TP
+.B \-h
+Show the help message and exit.
+.TP
+.B \-j
+Use the Julian date format.
+.TP
+.B \-m \fIc\fR
+Use character 
+.I c
+to mark the location of the timestamp.
+.TP
+.B \-n \fI#\fR
+Use a numeric stamp instead of the default date.
+.TP
+.B \-t
+Use the time in the stamp.
+.TP
+.B \-v
+Increase verbosity.
+.SH EXAMPLES
+.EX
+.B stamp -t "%s"
+.EE
+Apply a timestamp including the time to the string template.
+.SH AUTHORS
+Paul Kinney.
