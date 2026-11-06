@@ -14,7 +14,7 @@
 
 static void usage (FILE *fp, const char *name)
 {
-	(void) fprintf (fp, "usage:  /usr/local/bin/stamp [ -dhjtv ] [ -m c ] [ -n # ] pattern ...\n");
+	(void) fprintf (fp, "usage:  /usr/local/bin/stamp [ -hjtv ] [ -m c ] [ -n # ] pattern ...\n");
 	(void) fprintf (fp, "\t-h   show help message\n");
 	(void) fprintf (fp, "\t-j   use the julian date\n");
 	(void) fprintf (fp, "\t-m c use character c to mark location of timestamp\n");

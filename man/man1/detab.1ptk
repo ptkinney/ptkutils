@@ -4,11 +4,7 @@ detab \- convert tabs to spaces and remove whitespace at the end of lines.
 .SH SYNOPSIS
 .B /usr/bin/detab
 [
-.I -dhjtv
-] [
-.BI -m " c"
-] [
-.BI -n " #"
+.I -hv
 ]
 .I pattern ...
 .SH DESCRIPTION
